@@ -1,0 +1,14 @@
+name: mlflow-env
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      is_keras: {type: int, default: 0}
+      n_estimator: {type: int, default: 100}
+    command: "python main.py --is_keras={is_keras} --n_estimator={n_estimator}"
+  test:
+    parameters:
+      is_keras: {type: int, default: 0}
+      n_estimator: {type: int, default: 50}
+    command: "python main.py --is_keras={is_keras} --n_estimator={n_estimator}"
